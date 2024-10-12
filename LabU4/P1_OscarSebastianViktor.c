@@ -44,7 +44,7 @@ int main(){
 
     }
 
-    printf("/nHay %d primos menores o iguales a %d/n", cantidadPrimos, num);
+    printf("\nHay %d primos menores o iguales a %d\n", cantidadPrimos, num);
     printf("Y su suma equivale a: %d\n",sumaPrimos);
     
 
