@@ -8,8 +8,11 @@ Se desea contar con algún medio que permita explicar a los alumnos la sucesión
 entero positivo, mostrando:
 El listado de valores numéricos que se generan en la sucesión.
 El porcentaje de valores pares generados.
-El porcentaje de valores impares generados.*/
-//Laboratorio 4
+El porcentaje de valores impares generados.
+Creado por Oscar Pelayo Alonso Pérez, Viktor Chargoy Espino y Sebastian Juárez Vilchis
+Laboratorio 4
+14 de octubre de 2024
+*/
 #include <stdio.h>
 #include <math.h>
 int main(){
