@@ -19,7 +19,7 @@ int main(){
 
     while(num<1||200<num){
         printf("Error, fuera de rango");
-        printf("Ingrese un número (entero en el rango 1<=n<=200): ");
+        printf("\nIngrese un número (entero en el rango 1<=n<=200): ");
         scanf("%d",&num);
     }
         sumaPrimos=0;

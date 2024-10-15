@@ -29,7 +29,7 @@ int main(){
     }
     else{
         printf("El listado de números generados es: ");
-        printf("%d,",num);
+        printf("%d, ",num);
      while (num!=1)
     {
         if (num%2==0)
@@ -48,7 +48,7 @@ int main(){
             printf("%d.",num);
         }
         else{
-            printf("%d,",num);
+            printf("%d, ",num);
         } 
     } 
     }
