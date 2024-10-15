@@ -2,7 +2,7 @@
 Programa en C que imprime todos los números primos menores o iguales a n, su cantidad y suma
 Con 1<=n<=200
 Creado por Oscar Pelayo Alonso Pérez, Viktor Chargoy Espino y Sebastian Juárez Vilchis
-Laboratorio 3
+Laboratorio 4
 11 de octubre de 2024
 */
 

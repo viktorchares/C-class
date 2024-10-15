@@ -5,7 +5,7 @@ resultado, imprima el mayor, el menor y el promedio. Este programa debe ejecutar
 y para volver a pedir otro valor de n, se debe introducir la contraseña: 2024, de lo contrario no podrá
 ejecutarse otra vez el programa, indicando que la contraseña es incorrecta y finalizará
 Creado por Oscar Pelayo Alonso Pérez, Viktor Chargoy Espino y Sebastian Juárez Vilchis
-Laboratorio 3
+Laboratorio 4
 14 de octubre de 2024
 */
 
@@ -55,7 +55,7 @@ int main() {
     printf("El mayor número es: %.2f\n", mayor);
     printf("El menor número es: %.2f\n", menor);
     printf("El promedio de los números es: %.2f\n", promedio);
-    printf("Ingrese la contraseña numerica para ejecutar nuevamente (2024 para continuar): ");
+    printf("Ingrese la contraseña numerica para ejecutar nuevamente: ");
     scanf("%d", &contrasena);
   } while (contrasena == 2024 );
   printf("Contraseña incorrecta. Finalizando el programa.\n");
