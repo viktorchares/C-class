@@ -50,15 +50,17 @@ int main(){
         else{
             printf("%d, ",num);
         } 
-    } 
     }
-
+    
     total = p + i;
     totalpar = (p * 100.0) / total;
     totalimpar = (i * 100.0) / total;
     printf("\nEl porcentaje de números pares es: %.2f%%", totalpar);
     printf("\nEl porcentaje de números impares es: %.2f%%", totalimpar);
     
+    }
+
+   
     
     return 0;
 }
