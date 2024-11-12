@@ -17,7 +17,7 @@ int main(){
     float promedio;
     int conteo[31];
     srand(time(NULL));
-    printf("Programa que pide el tamano de una matriz para generarla aleatoriamente/n");
+    printf("Programa que pide el tamano de una matriz para generarla aleatoriamente\n");
     printf("Ademas, cuenta sus elementos, obtiene el promedio, numero menor y mayor\n\n");
 
     printf("Dame el numero de filas de la matriz: ");
