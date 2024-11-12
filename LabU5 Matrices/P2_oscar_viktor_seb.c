@@ -60,6 +60,7 @@ int main(){
         }
         printf("\n");
     }
+    printf("El programa ha finalizado")
   
     return 0;
 }
