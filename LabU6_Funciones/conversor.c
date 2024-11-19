@@ -41,15 +41,15 @@ int main(){
     switch(opcion){
         case 1:
             resultado = Convertir_Pesos_Dolares();
-            printf("La cantidad en dólares es: %.2f\n",resultado);
+            printf("La cantidad de %f pesos equivale a: %.2f\n dolares",pesos, resultado);
             break;
         case 2:
             resultado = Convertir_Dolares_Euros();
-            printf("La cantidad en euros es: %.2f\n",resultado);
+            printf("La cantidad de %f dolares equivale a: %.2f\n euros", dolares, resultado);
             break;
         case 3:
             resultado = Convertir_Euros_Pesos();
-            printf("La cantidad en pesos es: %.2f\n",resultado);
+            printf("La cantidad de %f euros equivale a: %.2f\n pesos",euros,resultado);
             break;
         default:
             printf("Opcion incorrecta\n");
