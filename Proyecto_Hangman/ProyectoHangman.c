@@ -58,7 +58,7 @@ void obtenerPalabraRandom(int opcion){//obtiene la palabra de la categoria selec
     char  frutas [6][15]={"manzana\0","platano\0","guayaba\0","papaya\0","melon\0","melocoton\0",};
     char  paises [6][15]={"australia\0","irlanda\0","polonia\0","monaco\0","marruecos\0","inglaterra\0"};
     // deportes, frutas, paises, comida 6 de cada una en ese orden
-    
+
     int numpalabra=rand()%6;
     int i=0;
     largoPalabra=0;
@@ -206,12 +206,13 @@ void jugarAhorcados(){//simula el juego ya teniendo la palabra
         printf("\nIngresa una letra minuscula no eñe: ");
         scanf(" %c", &letra);
         int estadoDelIntento=comprobarIntentoCorrecto(letra);
+        //checar si se implementa la caracteristica de que si se sabe la palabra la pueda poner entera
         // retorna 0 si pierde vida, 1 si es correcta la palabra, -1 si ya estaba ocupada y -2 si es invalida
         if(estadoDelIntento==0)vidas--;
         
 
     }
-
+    //agregar palabra que era y ahorcado
     if(vidas<1){
         printf("\n Ya no tienes vidas, perdiste\n");
         //imprimir muneco de 0 vidas
