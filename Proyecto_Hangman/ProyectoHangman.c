@@ -117,8 +117,9 @@ char auxiliarEnIntercambio;
 
 
 //primero comprobamos si la letra es valida
-if(97<=letra && letra<=122){//si es valida continuamos con lo demas
+if('a'<=letra && letra<='z'){//si es valida continuamos con lo demas
 
+//Compara si ya habia sido ingresada la letra antes
 for(i=0;i<cantidadLetrasIngresadas;i++){
     if(letra==letrasYaIngresadas[i]){
         printf("\nError, la letra %c ya habia sido ingresada anteriormente\n",letra);
@@ -131,7 +132,7 @@ if(valorRetornable==-10){//es valida y no ha sido ingresada, comprobar si esta e
     cantidadLetrasIngresadas++;
     for(i=0;i<largoPalabra;i++){
         if(letra==palabraSecreta[i]){
-            avancePalabra[2*i]=letra;//el avance de la palabra secreta tiene espacios
+            avancePalabra[2*i]=letra;//el avance de la palabra secreta tiene espacios, por ende es 2*i
             cantidadAvance++;
             valorRetornable=1;
         }
@@ -145,6 +146,8 @@ if(valorRetornable==-10){//es valida y no ha sido ingresada, comprobar si esta e
         letraInvalidaActual+=2;
         //ordenar con buble sort las letras que no estan en la palabra
 
+
+        //ordenamiento puede ser una funcion
         for(i=0;i<letraInvalidaActual;i+=2){
             indiceDeMinimo=i;
             for(j=i;j<letraInvalidaActual;j+=2){
@@ -163,8 +166,8 @@ if(valorRetornable==-10){//es valida y no ha sido ingresada, comprobar si esta e
         printf("\nLa letra '%c' no esta en la palabra, pierdes una vida\n",letra);
         valorRetornable=0;
 
-    }else{//la letra si estaba en la palabra
-        printf("\nEncontraste la letra %c de la palabra secreta *aplausos* \n",letra);
+    }else if(valorRetornable==1){//la letra si estaba en la palabra
+        printf("\nEncontraste la letra %c de la palabra secreta ;D \n",letra);
     }
 }
 
