@@ -7,14 +7,6 @@ Proyecto
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-//declaramos todas las palabras con caracter nulo /0 al final
-// char [cual palabra][longitud]
-char comida [6][15]={ "hamburguesa\0", "enchiladas\0","chilaquiles\0","burritos\0","quesadilla\0","tiramisu\0" };
-char deportes [6][15]={"basquetbol\0","futbol\0","natacion\0","esgrima\0","volleybol\0","escalada\0"};
-char  frutas [6][15]={"manzana\0","platano\0","guayaba\0","papaya\0","melon\0","melocoton\0",};
-char  paises [6][15]={"australia\0","irlanda\0","polonia\0","monaco\0","marruecos\0","inglaterra\0"};
-// deportes, frutas, paises, comida 6 de cada una en ese orden
-
 
 
 char palabraSecreta[15]={0};//aqui se guardara la palabra secreta
@@ -59,6 +51,14 @@ int seleccionarOpcion(){//despliega el menu de opciones y retorna la opcion sele
 //Obtener la palabra aleatoria de la categoria seleccionada
 
 void obtenerPalabraRandom(int opcion){//obtiene la palabra de la categoria seleccionada, la almacena en variable global
+    //declaramos todas las palabras con caracter nulo /0 al final
+    // char [cual palabra][longitud]
+    char comida [6][15]={ "hamburguesa\0", "enchiladas\0","chilaquiles\0","burritos\0","quesadilla\0","tiramisu\0" };
+    char deportes [6][15]={"basquetbol\0","futbol\0","natacion\0","esgrima\0","volleybol\0","escalada\0"};
+    char  frutas [6][15]={"manzana\0","platano\0","guayaba\0","papaya\0","melon\0","melocoton\0",};
+    char  paises [6][15]={"australia\0","irlanda\0","polonia\0","monaco\0","marruecos\0","inglaterra\0"};
+    // deportes, frutas, paises, comida 6 de cada una en ese orden
+    
     int numpalabra=rand()%6;
     int i=0;
     largoPalabra=0;
