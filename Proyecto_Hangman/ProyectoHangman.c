@@ -1,5 +1,15 @@
 
 /*
+El juego consiste en adivinar una palabra en el menor número de
+intentos posibles. Primero se deben marcar tantas rayas como letras tenga la palabra secreta.
+El jugador tendrá que ir colocando letras para formar la palabra, si la letra está entre los
+caracteres de la palabra secreta se sustituye en el lugar de la raya. Cada vez que se solicita
+una letra, el jugador podrá adivinar la palabra secreta, si la letra no está entre los caracteres de
+la palabra secreta o bien el jugador adivina erróneamente la palabra secreta, el jugador pierde
+una oportunidad. El jugador tendrá un cierto número de oportunidades para adivinar la palabra
+secreta. El jugador gana si la palabra está completa o bien si adivina la palabra secreta antes
+de perder todas sus oportunidades. El jugador pierde si agota sus oportunidades.
+
 Creado por Oscar Pelayo Alonso Pérez, Viktor Chargoy Espino y Sebastian Juárez Vilchis
 Proyecto
 12 de noviembre de 2024
@@ -54,9 +64,9 @@ void obtenerPalabraRandom(int opcion){//obtiene la palabra de la categoria selec
     //declaramos todas las palabras con caracter nulo /0 al final
     // char [cual palabra][longitud]
     char comida [6][15]={ "hamburguesa\0", "enchiladas\0","chilaquiles\0","burritos\0","quesadilla\0","tiramisu\0" };
-    char deportes [6][15]={"basquetbol\0","futbol\0","natacion\0","esgrima\0","volleybol\0","escalada\0"};
-    char  frutas [6][15]={"manzana\0","platano\0","guayaba\0","papaya\0","melon\0","melocoton\0",};
-    char  paises [6][15]={"australia\0","irlanda\0","polonia\0","monaco\0","marruecos\0","inglaterra\0"};
+    char deportes [6][15]={"basquetbol\0","ciclismo\0","natacion\0","esgrima\0","volleybol\0","escalada\0"};
+    char  frutas [6][15]={"manzana\0","platano\0","guayaba\0","maracuya\0","mandarina\0","melocoton\0",};
+    char  paises [6][15]={"australia\0","irlanda\0","polonia\0","nigeria\0","marruecos\0","finlandia\0"};
     // deportes, frutas, paises, comida 6 de cada una en ese orden
 
     int numpalabra=rand()%6;
@@ -97,7 +107,7 @@ void obtenerPalabraRandom(int opcion){//obtiene la palabra de la categoria selec
             }
             break;
         default:
-
+            printf("\nCodigo de error, no se pudo asignar la palabra secreta\n");
             break;
 
     
@@ -105,6 +115,166 @@ void obtenerPalabraRandom(int opcion){//obtiene la palabra de la categoria selec
 
     return; 
 }
+
+//------------------------------------------------------------------------------------------------------------------
+//funcion que ya teniendo la palabra aleatoria crea los espacios donde se imprimiran las letras tipo _ _ _ _ ... _ _ _
+void generarEspaciosParaAdivinar(){
+    int i=0;
+    cantidadAvance=0;
+    for(i=0;i<2*largoPalabra;i++){//tomamos i con el coble de valor para poner espacios
+        if(palabraSecreta[i/2]=='\0'){
+            avancePalabra[i]='\0';
+            break;
+        }else{
+             if(i%2==0)avancePalabra[i]='_';//si es par ponemos espacio de letra
+             else avancePalabra[i]=' ';//si es impar ponemos un espacio vacio
+
+        }
+    }
+}
+
+//------------------------------------------------------------------------------------------------------------------
+//Impresion del muñeco de acuerdo al caso
+void imprimirMuneco(int vidas){
+
+    switch (vidas)
+    {
+    case 5:
+        printf("                                                       \n");
+        printf("    |______________________                            \n");
+        printf("    |                     |                            \n");
+        printf("    |                     |                            \n");
+        printf("    |                    ,,,                           \n");
+        printf("    |                   (o_o)                          \n");
+        printf("    |                  \\  |  /                         \n");
+        printf("    |                   \\ | /                          \n");
+        printf("    |                    \\|/                           \n");
+        printf("    |                     |                            \n");
+        printf("    |                     |                            \n");
+        printf("    |                    / \\                          \n");
+        printf("    |                   /   \\                         \n");
+        printf(" ___|___               /     \\                        \n");
+        printf("                                                       \n");
+        break;
+    
+    case 4:
+        printf("                                                       \n");
+        printf("    |______________________                            \n");
+        printf("    |                     |                            \n");
+        printf("    |                     |                            \n");
+        printf("    |                    ,,,                           \n");
+        printf("    |                   (o_o)                          \n");
+        printf("    |                  \\  |  /                         \n");
+        printf("    |                   \\ | /                          \n");
+        printf("    |                    \\|/                           \n");
+        printf("    |                     |                            \n");
+        printf("    |                     |                            \n");
+        printf("    |                    /                             \n");
+        printf("    |                   /                              \n");
+        printf(" ___|___               /                               \n");
+        printf("                                                       \n");
+        break;
+    
+    case 3:
+        printf("                                                       \n");
+        printf("    |______________________                            \n");
+        printf("    |                     |                            \n");
+        printf("    |                     |                            \n");
+        printf("    |                    ,,,                           \n");
+        printf("    |                   (o_o)                          \n");
+        printf("    |                  \\  |  /                         \n");
+        printf("    |                   \\ | /                          \n");
+        printf("    |                    \\|/                           \n");
+        printf("    |                     |                            \n");
+        printf("    |                     |                            \n");
+        printf("    |                                                  \n");
+        printf("    |                                                  \n");
+        printf(" ___|___                                               \n");
+        printf("                                                       \n");
+        break;
+
+    case 2:
+        printf("                                                       \n");
+        printf("    |______________________                            \n");
+        printf("    |                     |                            \n");
+        printf("    |                     |                            \n");
+        printf("    |                    ,,,                           \n");
+        printf("    |                   (o_o)                          \n");
+        printf("    |                     |  /                         \n");
+        printf("    |                     | /                          \n");
+        printf("    |                     |/                           \n");
+        printf("    |                     |                            \n");
+        printf("    |                     |                            \n");
+        printf("    |                                                  \n");
+        printf("    |                                                  \n");
+        printf(" ___|___                                               \n");
+        printf("                                                       \n");
+        break;
+    
+    case 1:
+        printf("                                                       \n");
+        printf("    |______________________                            \n");
+        printf("    |                     |                            \n");
+        printf("    |                     |                            \n");
+        printf("    |                    ,,,                           \n");
+        printf("    |                   (o_o)                          \n");
+        printf("    |                     |                            \n");
+        printf("    |                     |                            \n");
+        printf("    |                     |                            \n");
+        printf("    |                     |                            \n");
+        printf("    |                     |                            \n");
+        printf("    |                                                  \n");
+        printf("    |                                                  \n");
+        printf(" ___|___                                               \n");
+        printf("                                                       \n");
+        break;
+    
+    case 0:
+        printf("\n                                                     \n");
+        printf("    |______________________                            \n");
+        printf("    |                     |                            \n");
+        printf("    |                     |                            \n");
+        printf("    |                    ,,,                           \n");
+        printf("    |                   (x_x)                          \n");
+        printf("    |                                                  \n");
+        printf("    |                                                  \n");
+        printf("    |                                                  \n");
+        printf("    |                                                  \n");
+        printf("    |                                                  \n");
+        printf("    |                                                  \n");
+        printf("    |                                                  \n");
+        printf(" ___|___                                               \n");
+        printf("                                                       \n");
+        break;
+
+    case 12345://es una bandera, solo entra si gana
+        printf("                                                      \n");
+        printf("    |______________________  Salvaste al ahorcado     \n");
+        printf("    |                     |                            \n");
+        printf("    |                     |                            \n");
+        printf("    |                         ,,,                           \n");
+        printf("    |                        (o.o)                          \n");
+        printf("    |                       \\  |  /                         \n");
+        printf("    |                        \\ | /                          \n");
+        printf("    |                         \\|/                           \n");
+        printf("    |                          |                            \n");
+        printf("    |                          |                            \n");
+        printf("    |                         / \\                          \n");
+        printf("    |                        /   \\                         \n");
+        printf(" ___|___                    /     \\                        \n");
+        printf("                                                       \n");
+        break;
+
+    default://no deberia entrar aqui
+        printf("\nEsto es un error o el muneco es un ser inmortal :o\n");
+        printf("\nNo deberias estar aqui si eres un ser mortal\n");
+        break;
+    }
+
+
+
+}
+    
 
 //------------------------------------------------------------------------------------------------------------------
 //Comprueba a partir de la letra seleccionada, si es valida, no ha sido ingresada anteriormente y si esta en la palabra o no
@@ -180,9 +350,8 @@ return valorRetornable;
 
 }
 
-
 //------------------------------------------------------------------------------------------------------------------
-//funcion que ya teniendo la palabra aleatoria simula el juego de ahorcados
+//funcion que ya teniendo la palabra aleatoria y los espacios simula el juego de ahorcados
 
 
 void jugarAhorcados(){//simula el juego ya teniendo la palabra
@@ -190,22 +359,14 @@ void jugarAhorcados(){//simula el juego ya teniendo la palabra
     letrasFueraDePalabra[0]='\0';
     cantidadAvance=0;
     char letra;
-    for(i=0;i<2*largoPalabra;i++){//tomamos i con el coble de valor para poner espacios
-        if(palabraSecreta[i/2]=='\0'){
-            avancePalabra[i]='\0';
-            break;
-        }else{
-             if(i%2==0)avancePalabra[i]='_';//si es par ponemos espacio de letra
-             else avancePalabra[i]=' ';//si es impar ponemos un espacio vacio
-
-        }
-    }
+    
     while(vidas>0 && cantidadAvance<largoPalabra-1){
         printf("Este es el avance y la cantidad de vidas:\n");
         printf("%s\n",avancePalabra);
         if(vidas<5)printf("\nLas letras que NO estan en la palabra son: %s\n",letrasFueraDePalabra);
         printf("Cuentas con %d vidas disponibles\n", vidas);
         //aqui poner funcion que imprima muneco colgado
+        imprimirMuneco(vidas);
         printf("\nIngresa una letra minuscula no eñe: ");
         scanf(" %c", &letra);
         int estadoDelIntento=comprobarIntentoCorrecto(letra);
@@ -215,13 +376,18 @@ void jugarAhorcados(){//simula el juego ya teniendo la palabra
         
 
     }
-    //agregar palabra que era y ahorcado
+
+    //termina el juego, por completar la palabra entera o por terminarse las vidas
     if(vidas<1){
         printf("\n Ya no tienes vidas, perdiste\n");
         //imprimir muneco de 0 vidas
+        imprimirMuneco(0);
+        printf("La palabra secreta era: %s",palabraSecreta);
+
     }else if(cantidadAvance>=largoPalabra-1){//si tiene vidas y salio del ciclo es porque gano
         printf("\n Felicidades, ganaste el juego de ahorcados\n");
         printf("La palabra secreta era: %s",palabraSecreta);
+        imprimirMuneco(12345);
     }
 
     return;
@@ -234,11 +400,13 @@ int main(){
     //plantamos la semilla al valor random
     srand(time(NULL));
     printf("Este programa emula el juego de ahorcados\n");
-    int opcionSeleccionada=seleccionarOpcion();
+    int opcionSeleccionada=seleccionarOpcion();//seleccionamos la opcion de categoria y desplegamos menu
     //printf("\n Opcion %d\n",opcionSeleccionada);
-    obtenerPalabraRandom(opcionSeleccionada);
-    //llamamos a funcion que simula
-    jugarAhorcados();
+    obtenerPalabraRandom(opcionSeleccionada);//obtenemos la palabra random a partir de la categoria
+
+    generarEspaciosParaAdivinar();//generamos los espacios de la palabra tipo _ _ _ _ ... _ _ _
+    
+    jugarAhorcados();//llamamos a funcion que simula el juego
 
     
 }
