@@ -28,8 +28,8 @@ Profesor: Ever Juárez Guerra
 #include <stdlib.h>
 #include <time.h>
 
-char archivo_sal[]= "C:\\Users\\vikch\\Documents\\GitHub\\C-class\\LabU7_Archivos\\salida1.txt";
-//char archivo_sal[]= "salida1.txt";
+//char archivo_sal[]= "C:\\Users\\vikch\\Documents\\GitHub\\C-class\\LabU7_Archivos\\salida1.txt";
+char archivo_sal[]= "salida1.txt";
 //char archivo_sal[] = "C:\\Users\\Oalonso11\\Documents\\GitHub\\C-class\\LabU7_Archivos\\salida1.txt";
 FILE *punt_file_sal;
 
