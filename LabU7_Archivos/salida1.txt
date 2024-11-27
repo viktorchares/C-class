@@ -1,0 +1,30 @@
+Programa que pide el tamano de dos matrices para generarlas aleatoriamente de 0 a 3
+Puede realizar las operaciones de suma de ambas, multiplicacion y transpuesta, dadas las condiciones
+
+
+Ingresa la operación deseada 1. Suma, 2. Multiplicacion o 3. Transpuesta de ambas matrices: 
+Seleccionaste la operacion 2
+
+La matriz A cuenta con 5 filas y 6 columnas
+Se imprime la matriz generada A
+2 2 0 1 0 0 
+3 0 1 1 3 1 
+1 2 3 1 3 2 
+2 2 0 3 2 1 
+2 3 1 0 0 0 
+
+La matriz B cuenta con 6 filas y 4 columnas
+Se imprime la matriz generada B
+1 2 0 1 
+0 3 0 2 
+1 1 2 2 
+1 3 2 2 
+2 1 1 1 
+3 0 3 2 
+
+Resultado de la multiplicación de las matrices A y B:
+3 13 2 8 
+14 13 10 12 
+17 17 17 20 
+12 21 11 16 
+3 14 2 10 
